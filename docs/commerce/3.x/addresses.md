@@ -79,6 +79,10 @@ Address lines are used, for example, on the [order edit](orders.md#editing-order
 
 You can customize this array using the [defineAddressLines](extend/events.md#defineaddresslines) event.
 
+### Customizing Address Fields
+
+If you need to add custom fields to each address, you can use `custom1`, `custom2`, `custom3`, and `custom4`.
+
 ## Cart Addresses
 
 ### Fetching Cart Addresses
