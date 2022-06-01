@@ -2,6 +2,10 @@
 
 Theme and significant content changes will be documented in this file.
 
+## Unpublished
+### Added
+- Documented user query behavior changes in Craft 4.x upgrade guide.
+
 ## 2022-05-27
 ### Added
 - Added a note about Craft 4.x element type garbage collection.

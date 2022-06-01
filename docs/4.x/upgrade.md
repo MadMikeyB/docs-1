@@ -391,6 +391,34 @@ A few user permissions have been removed in Craft 4:
 - `customizeSources` had made it possible for authorized users to customize element sources. Only admins can customize element sources now, and only from an environment that allows admin changes.
 - `publishPeerEntryDrafts:<uid>` permissions wouldn’t have stopped users from viewing, copying, and saving draft content themselves.
 
+## User Queries
+
+[User element queries](users.md#querying-users) return elements having _any_ status by default in Craft 4, instead of the more limited set of `active` users returned in Craft 3:
+
+```twig
+{# All users in Craft 4, *active* users in Craft 3 #}
+{% set users = craft.users().all() %}
+```
+
+You can still limit results to `active` users in Craft 4 by using the [status()](users.md#status) element query param:
+
+::: code
+```twig
+{# Only get *active* users in Craft 4 #}
+{% set users = craft.users()
+  .status('active')
+  .all() %}
+```
+```php
+// Only get *active* users in Craft 4
+$users = \craft\elements\User::find()
+    ->status('active')
+    ->all();
+```
+:::
+
+Users also come in two flavors as of Craft 4: those with credentials, and inactive users that do not. Whether a user has credentials is separate from their status in the system—their registration may be `pending` or the account may be temporarily `locked` because of failed logins, for example.
+
 ## Plugins
 
 See [Updating Plugins for Craft 4](extend/updating-plugins.md).
