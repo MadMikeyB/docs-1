@@ -419,6 +419,8 @@ $users = \craft\elements\User::find()
 
 Users also come in two flavors as of Craft 4: those with credentials, and inactive users that do not. Whether a user has credentials is separate from their status in the system—their registration may be `pending` or the account may be temporarily `locked` because of failed logins, for example.
 
+While credentialed and inactive users don’t have any immediate impact on existing functionality, you’ll probably want to keep that in mind when you’re querying users.
+
 ## Plugins
 
 See [Updating Plugins for Craft 4](extend/updating-plugins.md).
